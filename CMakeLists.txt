@@ -18,6 +18,9 @@ set(PROJECT_SOURCES
     mainwindow.ui
 )
 
+# Add resources explicitly
+qt_add_resources(PROJECT_SOURCES resources.qrc)
+
 # Add Windows resource file for executable icon
 if(WIN32)
     list(APPEND PROJECT_SOURCES appicon.rc)
@@ -31,18 +34,12 @@ endif()
 qt_add_executable(QtMultiOS
     WIN32 MACOSX_BUNDLE
     ${PROJECT_SOURCES}
-    resources.qrc # Optional: for Qt resource system (window icon)
 )
-
-# Set executable name to outputfile (uncomment if needed)
-# set_target_properties(QtMultiOS PROPERTIES
-#     OUTPUT_NAME "outputfile"
-# )
 
 target_link_libraries(QtMultiOS
     PRIVATE
-        Qt::Core
-        Qt::Widgets
+    Qt6::Core
+    Qt6::Widgets
 )
 
 include(GNUInstallDirs)
