@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    connect(ui->btnOk, SIGNAL(clicked()),this,SLOT(on_btnOk_Clicked()));
+    connect(ui->btnOk, SIGNAL(clicked()),this,SLOT(on_btnOk_clicked()));
 }
 
 MainWindow::~MainWindow()
@@ -15,7 +15,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_btnOk_Clicked()
+void MainWindow::on_btnOk_clicked()
 {
     qDebug() << "Ok button clicked";
     QMessageBox::information(this, "Information", "Hello World usingQt!");

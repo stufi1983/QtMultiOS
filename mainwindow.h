@@ -18,7 +18,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_btnOk_Clicked();
+    void on_btnOk_clicked();
 
 private:
     Ui::MainWindow *ui;
